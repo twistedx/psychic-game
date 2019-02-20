@@ -9,7 +9,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
@@ -22,60 +23,8 @@
         <p id="guess">You have 10 remaining.</p>
         <p id="playerGuess">Your Guesses so far: [  ]</p>
     </div>
- 
- <script>
-     //first create an array of possible choices
-    var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-    var wins = 0;
-    var losses = 0;
-    var guesses = 10;
-    var iPicked = "";
 
-
-    var playerGuessText = document.getElementById("playerGuess");
-    var winsText = document.getElementById("wins");
-    var lossesText = document.getElementById("losses");
-    var guessText = document.getElementById("guess");
-    
-    
-    document.onkeyup = function(event) {  
-        var counter = 0;
-    // Take the Key from the user
-        var userGuess = event.key;
-        
-    
-    //now that we have the array pick a letter from it
-        var letterPick = Math.floor(Math.random() * letters.length);
-
-        if (userGuess === letters[letterPick]){
-            wins++;
-            alert("The Computer choose " + letters[letterPick] + " So did you, you Win!!")
-            iPicked = "";
-            counter = 0;
-            guesses = 10;
-        }else if (guesses <= 0){
-            losses++;
-            alert("You lose!");
-            iPicked = "";
-            counter = 0;
-            guesses = 10;
-        }else{
-            guesses--;
-            counter++;
-            iPicked = iPicked + " " + userGuess;
-            console.log(guesses);
-            guessText.textContent = "You have " + guesses +  " remaining."
-        }
-        
-        playerGuessText.textContent = "Your Guesses so far: [" + iPicked + " ]";
-        winsText.textContent = "wins: " + wins;
-        lossesText.textContent = "losses: " + losses;
-        guessText.testContent = "You have " + guesses +  " remaining."
-    }
-    
-
-
-</script>
+<script src="assets/javascript/game.js" type="text/javascript"></script>
 
 </body>
 
